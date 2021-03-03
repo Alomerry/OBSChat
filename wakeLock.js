@@ -11,7 +11,6 @@
                     console.log('[wakeLock] Screen Wake Lock was released');
                 });
                 console.log('[wakeLock] Screen Wake Lock is active');
-
                 // …and release it again after 5s.
                 // window.setTimeout(() => {
                 //     wakeLock.release();

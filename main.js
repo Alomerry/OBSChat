@@ -787,7 +787,6 @@ const main = {
 
         this.writeToScreen(`<span class="pod">INFO</span>[Twitch] ${twitch_channel_name}`);
         console.log('[twitch]');
-
         //
         const client = new tmi.Client({
             options: { debug: false, messagesLogLevel: "info" },

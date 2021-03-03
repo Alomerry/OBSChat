@@ -1,80 +1,142 @@
-<!DOCTYPE html>
+<html>
 <!--
 BABANANA Chat 說明文件:
 https://hackmd.io/s/B183d6iwG
 -->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="referrer" content="same-origin">
 
-    <title>BABANANA Chat</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="same-origin">
 
-    <meta name="theme-color" content="#41924B">
-    <link rel="shortcut icon" href="https://banana.eotones.net/favicon.ico">
+  <title>OBS Twitch Chat</title>
 
-    <link href="./css/style.css" media="all" rel="stylesheet">
-    <link href="../css/style_obs.css" media="all" rel="stylesheet">
-  </head>
-  <body id="css_for_browser" data-obs_mode="false" data-chat_limit="200" data-csrf_token="f4oxu855zoooks0goc0kcwk08gcc8ok">
-    <div id="body-wrapper">
-      <div id="announcements" class="toggle-content is-visible">
-        <div class="chat_title">&lt; BABANANA Chat &gt;</div>
-        <noscript>
-          本頁面必須開啟Javascript功能才可使用。<br>
-          說明文件請到: <a href="https://hackmd.io/s/B183d6iwG" rel="noopener noreferrer" target="_blank">https://hackmd.io/s/B183d6iwG</a>
-        </noscript>
-        <div id="c_script" class="toggle-content">
-          這個頁面是浪PLAY直播聊天室的"非官方"連線工具，<br>
-          本站和浪PLAY直播(https://play.lang.live)無任何關係。<br>
-          說明文件請到: <a href="https://hackmd.io/s/B183d6iwG" rel="noopener noreferrer" target="_blank">https://hackmd.io/s/B183d6iwG</a><br><br>
-          <div>
-            Lang Play直接用數字ID<br>
-            Twitch在帳號前加 twitch:英文數字帳號 <br>
-            例如 twitch:eotones<br>
-            <input id="inputChannel" type="text" placeholder="例如： 2426076" value="">
-            <button id="btn_submit">送出</button>
+  <meta name="theme-color" content="#41924B">
+  <link rel="shortcut icon" href="https://alomerry.com/favicon.ico">
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <!-- jQuery and JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-LCPyFKQyML7mqtS+4XytolfqyqSlcbB3bvDuH9vX2sdQMxRonb/M3b9EmhCNNNrV"
+    crossorigin="anonymous"></script>
+
+  <link href="./css/style.css" media="all" rel="stylesheet">
+  <link href="./css/font.css" media="all" rel="stylesheet">
+  <link href="../css/style_obs.css" media="all" rel="stylesheet">
+</head>
+
+<body id="css_for_browser" data-obs_mode="false" data-chat_limit="200"
+  data-csrf_token="f4oxu855zoooks0goc0kcwk08gcc8ok">
+  <div id="body-wrapper">
+    <div id="announcements" class="toggle-content is-visible">
+      <noscript>
+        本页面必须开启 Javascript 功能才可使用。<br>
+        说明文件请到: <a href="https://hackmd.io/s/B183d6iwG" rel="noopener noreferrer"
+          target="_blank">https://hackmd.io/s/B183d6iwG</a>
+      </noscript>
+
+      <center>
+        <div class="card" style="width: 48rem;background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);">
+          <div class="card-body">
+            <h5 class="card-title">
+              <div class="chat_title">&lt; Twitch Chat &gt;</div>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">本页面由<a href="https://steamcommunity.com/id/Alomerry/">清欢</a>修改自 <a href="https://banana.eotones.net">https://banana.eotones.net</a></h6>
+            <p class="card-text">
+            <div id="c_script" class="toggle-content">
+              这个页面是 Twitch 直播聊天室的“非官方”连线工具，<br>
+              本站和 Twitch 直播 (https://twitch.tv) 无任何关系。<br>
+              说明文件请到: <a href="https://hackmd.io/s/B183d6iwG" rel="noopener noreferrer"
+                target="_blank">https://hackmd.io/s/B183d6iwG</a><br><br>
+              <div>
+                <label for="basic-url">
+                  Twitch 在账号前加 twitch:英文账号 <br>
+                  例如 twitch:alomerry<br>
+                </label>
+                <div style="width: 20rem;margin-top: 2rem;" class="input-group">
+                  <input id="inputChannel" type="text" placeholder="例如：twitch:alomerry" value="" class="form-control">
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary btn-success" id="btn_submit"
+                      style="color: aliceblue;" onclick=''>进入</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </p>
+            <a href="https://github.com/Alomerry/OBSChat/issues" class="card-link">Bug 反馈</a>
+            <a href="https://github.com/Alomerry/OBSChat" class="card-link">Github 源码</a>
           </div>
         </div>
-      </div>
-      
-      <div id="output">
-
-      </div>
-
-      <div id="full_page_cover"></div>
-      <div id="tool_bar" class="toggle-content">
-        <span id="tool_bar_datetime"></span>
-        <span id="heat">熱度: 0</span>
-        <span id="user_cnt"></span>
-        <span id="setting_img" class="toggle-content"><!-- | <img src="./images/svg/cog.svg">--></span>
-      </div>
-
-      <div id="setting_div" class="toggle-content">
-        <label for="ttsCheck"><div><input type="checkbox" id="ttsCheck"> 語音</div></label>
-        <label for="joinCheck" id="joinCheck_lab" class="toggle-content"><div><input type="checkbox" id="joinCheck"> 加入訊息</div></label>
-        <label for="giftCheck" id="giftCheck_lab" class="toggle-content"><div><input type="checkbox" id="giftCheck" checked> 禮物訊息</div></label>
-        <label for="statsUiCheck" id="statsUiCheck_lab" class="toggle-content"><div><input type="checkbox" id="statsUiCheck"> 顯示統計</div></label>
-      </div>
-
-      <div id="scroll_to_bottom_btn" class="toggle-content">往下查看更多訊息。</div>
-
-      <div id="stats_ui" class="toggle-content"></div>
+      </center>
     </div>
 
-    <script type="text/javascript" src="wakeLock.js"></script>
-    <script type="text/javascript" src="vendor.js"></script>
-    <script type="text/javascript" src="tts.js"></script>
-    <script type="text/javascript" src="libs/tmi/tmi.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
-    
+    <div id="output">
 
-    <!-- <script type="module" src="./main.js"></script> -->
+    </div>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90554780-3"></script>
-    <script type="text/javascript" src="ga.js"></script>
-  </body>
+    <div id="full_page_cover"></div>
+    <div id="tool_bar" class="toggle-content">
+      <span id="tool_bar_datetime"></span>
+      <span id="heat">熱度: 0</span>
+      <span id="user_cnt"></span>
+      <span id="setting_img" class="toggle-content">
+        <!-- | <img src="./images/svg/cog.svg">-->
+      </span>
+    </div>
+
+    <div id="setting_div" class="toggle-content">
+      <label for="ttsCheck">
+        <div><input type="checkbox" id="ttsCheck"> 語音</div>
+      </label>
+      <label for="joinCheck" id="joinCheck_lab" class="toggle-content">
+        <div><input type="checkbox" id="joinCheck"> 加入訊息</div>
+      </label>
+      <label for="giftCheck" id="giftCheck_lab" class="toggle-content">
+        <div><input type="checkbox" id="giftCheck" checked> 禮物訊息</div>
+      </label>
+      <label for="statsUiCheck" id="statsUiCheck_lab" class="toggle-content">
+        <div><input type="checkbox" id="statsUiCheck"> 顯示統計</div>
+      </label>
+    </div>
+
+    <div id="scroll_to_bottom_btn" class="toggle-content">往下查看更多訊息。</div>
+
+    <div id="stats_ui" class="toggle-content"></div>
+  </div>
+
+  <script type="text/javascript" src="wakeLock.js"></script>
+  <script type="text/javascript" src="vendor.js"></script>
+  <script type="text/javascript" src="tts.js"></script>
+  <script type="text/javascript" src="libs/tmi/tmi.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+
+
+  <!-- <script type="module" src="./main.js"></script> -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90554780-3"></script>
+  <script type="text/javascript" src="ga.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (window.location.href.indexOf("#") != -1) {
+        if (typeof window.obsstudio !== 'undefined') { // obs studio專用js
+          document.body.style.backgroundColor == "rgba(0, 0, 0, 0)"
+        } else {
+          // document.body.style.backgroundColor="rgba(30,30,30,1)"
+          document.body.style.backgroundImage = "linear-gradient(to top, #5ee7df 0%, #b490ca 100%)"
+        }
+      } else {
+        document.body.style.backgroundImage = "linear-gradient(to top, #5ee7df 0%, #b490ca 100%)"
+      }
+    });
+  </script>
+</body>
+
 </html>
