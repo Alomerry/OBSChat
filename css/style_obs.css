@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+body#css_for_obs {
+    background-color: transparent;
+    overflow: hidden;
+}
+#css_for_obs #tool_bar {
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+}
+#css_for_obs .kk_come {
+    display: none;
+}
+
+#css_for_obs img.lang_sticker {
+    height: 1.375em;
+    width: auto;
+}
