@@ -83,378 +83,10 @@ var tool_bar_datetime_span; //toolbar時間
 var conn_overseas_chat = false; //是否連接海外chat ws server
 var last_msg_time = 0;
 
-//conn_overseas_chat = true;
-
-// 禮物列表
-// https://game-api.lang.live/webapi/v1/gift/list?live_id=2282757G99342N1nd&pfid=2426076&anchor_pfid=2282757
-// https://game-api.lang.live/webapi/v1/gift/list?anchor_pfid=2282757
-// 舊
-// https://g-api.langlive.com/webapi/v1/gift/list?live_id=2282757G99342N1nd&pfid=2426076&anchor_pfid=2282757
 var prod_id_arr = [];
 (() => { //折疊用
     prod_id_arr[112] = "喔我戀愛了";
     prod_id_arr[116] = "陪你看流星雨";
-
-    prod_id_arr[1001] = "小紅包";
-    prod_id_arr[1002] = "大紅包";
-
-    prod_id_arr[1054] = "告白氣球";
-    prod_id_arr[1058] = "浪Live應援團";
-    prod_id_arr[1073] = "大聲說愛你";
-
-    prod_id_arr[1138] = "人氣卡（Small）";
-    prod_id_arr[1139] = "人氣卡（Medium）";
-    prod_id_arr[1140] = "人氣卡（Large）";
-
-    prod_id_arr[1159] = "火箭";
-
-    prod_id_arr[1167] = "真情告白";
-    prod_id_arr[1174] = "鑽石恆久遠";
-
-    prod_id_arr[1225] = "人氣卡（mini）";
-    prod_id_arr[1246] = "愛の火箭";
-
-    prod_id_arr[1313] = "MVP";
-
-    prod_id_arr[1334] = "94狂";
-    prod_id_arr[1335] = "掌聲鼓勵";
-    prod_id_arr[1336] = "很廢";
-    prod_id_arr[1337] = "好棒棒";
-    prod_id_arr[1339] = "能量飲料";
-
-    prod_id_arr[1341] = "平底鍋";
-    prod_id_arr[1342] = "灰機";
-
-    prod_id_arr[1362] = "歡樂送";
-    prod_id_arr[1364] = "大雞大利";
-    prod_id_arr[1365] = "香蕉";
-    prod_id_arr[1366] = "幸運幣";
-    prod_id_arr[1367] = "卡牌包";
-
-    prod_id_arr[1370] = "問號燈";
-    prod_id_arr[1371] = "凱撒之力";
-    prod_id_arr[1372] = "天使甲";
-    prod_id_arr[1373] = "小金人";
-
-    prod_id_arr[1393] = "LMS徽章";
-
-    prod_id_arr[1462] = "帥氣";
-    prod_id_arr[1469] = "COOL";
-    prod_id_arr[1470] = "神操作";
-
-    prod_id_arr[1473] = "全力聲援";
-
-    prod_id_arr[1559] = "AWM";
-    prod_id_arr[1560] = "雞毛";
-    prod_id_arr[1561] = "主播加油券";
-
-    prod_id_arr[1629] = "最佳導演";
-    prod_id_arr[1630] = "最佳演員";
-    prod_id_arr[1661] = "金剛寶寶";
-
-    prod_id_arr[1707] = "能量話筒";
-    prod_id_arr[1778] = "空投箱";
-
-    prod_id_arr[1813] = "ahq集氣徽章";
-    prod_id_arr[1814] = "FW集氣徽章";
-    prod_id_arr[1815] = "GRX集氣徽章";
-    prod_id_arr[1816] = "HKA集氣徽章";
-    prod_id_arr[1817] = "JT集氣徽章";
-    prod_id_arr[1818] = "M17集氣徽章";
-    prod_id_arr[1819] = "MAD集氣徽章";
-    prod_id_arr[1820] = "AFR集氣徽章";
-
-    prod_id_arr[1867] = "帕呼哩系";
-    prod_id_arr[1868] = "阿多肯";
-
-    prod_id_arr[1925] = "Skr";
-    prod_id_arr[1926] = "噴很大";
-    prod_id_arr[1938] = "穩";
-
-    prod_id_arr[2048] = "超級幸運星";
-    prod_id_arr[2085] = "一起搖擺";
-    prod_id_arr[2113] = "愛の火箭";
-
-    prod_id_arr[2229] = "浪Live應援團（LS專用）";
-    prod_id_arr[2230] = "Tick Tack！Tick Tack！（LS專用）";
-    prod_id_arr[2240] = "嚇到吃腳腳";
-
-    prod_id_arr[2371] = "掌聲鼓勵";
-    prod_id_arr[2372] = "94狂";
-    prod_id_arr[2374] = "蜂蜜檸檬水";
-    prod_id_arr[2378] = "漫威之父";
-
-    prod_id_arr[2401] = "狩獵小刀";
-    prod_id_arr[2402] = "豪野人戰斧";
-    prod_id_arr[2403] = "鳳凰神弓";
-    prod_id_arr[2454] = "阿伯怪怪的";
-    prod_id_arr[2487] = "電玩教父 施文彬";
-    prod_id_arr[2488] = "愛愛問候您";
-
-    prod_id_arr[2514] = "冒險火箭";
-
-    prod_id_arr[2517] = "拐杖糖";
-    prod_id_arr[2518] = "薑餅人";
-    prod_id_arr[2519] = "聖誕襪-金";
-    prod_id_arr[2520] = "聖誕襪-銀";
-    prod_id_arr[2521] = "聖誕帽";
-    prod_id_arr[2522] = "聖誕老公公";
-    prod_id_arr[2523] = "聖誕老公公-銀";
-    prod_id_arr[2524] = "聖誕鈴鐺";
-    prod_id_arr[2525] = "雪人";
-    prod_id_arr[2526] = "雪人 (橫屏)";
-    prod_id_arr[2527] = "麋鹿";
-    prod_id_arr[2528] = "麋鹿 (橫屏)";
-    prod_id_arr[2529] = "聖誕雪橇";
-    prod_id_arr[2530] = "聖誕雪橇 (橫屏)";
-    prod_id_arr[2531] = "聖誕火箭";
-    prod_id_arr[2532] = "聖誕火箭 (橫屏)";
-
-    prod_id_arr[2650] = "草莓";
-    prod_id_arr[2651] = "草莓醬";
-    prod_id_arr[2652] = "草莓吐司";
-    prod_id_arr[2653] = "草莓派";
-    prod_id_arr[2654] = "草莓派(橫)";
-    prod_id_arr[2655] = "草莓蛋糕";
-    prod_id_arr[2668] = "雞腿";
-    prod_id_arr[2669] = "刈包";
-    prod_id_arr[2670] = "封肉";
-    prod_id_arr[2671] = "雞尾酒";
-    prod_id_arr[2672] = "雞尾酒(橫)";
-    prod_id_arr[2673] = "佛跳牆";
-    prod_id_arr[2674] = "佛跳牆(橫)";
-
-    prod_id_arr[2706] = "一起搖擺";
-    prod_id_arr[2712] = "水瓶圖";
-    prod_id_arr[2713] = "星光";
-    prod_id_arr[2714] = "慧星";
-    prod_id_arr[2715] = "水瓶座";
-    prod_id_arr[2716] = "水瓶座(橫)";
-    prod_id_arr[2717] = "流星雨";
-    prod_id_arr[2718] = "流星雨(橫)";
-
-    prod_id_arr[2741] = "YR吃竹鼠";
-
-    prod_id_arr[2746] = "春";
-    prod_id_arr[2747] = "福";
-    prod_id_arr[2748] = "燈籠";
-    prod_id_arr[2749] = "爆竹";
-    prod_id_arr[2750] = "金元寶";
-    prod_id_arr[2751] = "年年有魚";
-    prod_id_arr[2752] = "舞龍舞獅";
-    prod_id_arr[2753] = "舞龍舞獅(橫)";
-    prod_id_arr[2754] = "財神";
-    prod_id_arr[2755] = "財神(橫)";
-    prod_id_arr[2756] = "金豬火箭";
-    prod_id_arr[2757] = "金豬火箭(橫)";
-
-    prod_id_arr[2764] = "巧克力棒";
-    prod_id_arr[2765] = "手工巧克力";
-    prod_id_arr[2766] = "肉麻簡訊";
-    prod_id_arr[2767] = "一生一世";
-    prod_id_arr[2768] = "伴您一生";
-    prod_id_arr[2769] = "伴您一生(橫)";
-    prod_id_arr[2770] = "愛您一輩子";
-    prod_id_arr[2771] = "愛您一輩子(橫)";
-    prod_id_arr[2772] = "紋銀百兩";
-    prod_id_arr[2773] = "豆沙元宵";
-    prod_id_arr[2774] = "小提燈";
-    prod_id_arr[2775] = "蜂炮";
-    prod_id_arr[2776] = "蜂炮(橫)";
-    prod_id_arr[2777] = "祈福天燈";
-    prod_id_arr[2778] = "祈福天燈(橫)";
-
-    prod_id_arr[2779] = "絕代雙丸";
-
-    prod_id_arr[2781] = "一生一世(橫)";
-
-    prod_id_arr[2870] = "真亦";
-    prod_id_arr[2882] = "浩克";
-
-    prod_id_arr[2961] = "免費加油券";
-    prod_id_arr[2962] = "男神祝福券";
-    prod_id_arr[2963] = "歐巴選票";
-    prod_id_arr[2964] = "帥氣墨鏡";
-    prod_id_arr[2965] = "歐巴520";
-    prod_id_arr[2966] = "男神超跑";
-    prod_id_arr[2967] = "男神超跑(橫)";
-    prod_id_arr[2968] = "男神火箭";
-    prod_id_arr[2969] = "男神火箭(橫)";
-
-    prod_id_arr[2971] = "女神唇膏";
-    prod_id_arr[2972] = "裸背裙";
-
-    prod_id_arr[2976] = "水瓶千千";
-    prod_id_arr[2977] = "啵緹";
-
-    prod_id_arr[3015] = "摘星";
-
-    prod_id_arr[3028] = "裸背裙(橫)";
-    prod_id_arr[3029] = "女神王冠(橫)";
-    prod_id_arr[3030] = "女神王冠";
-    prod_id_arr[3031] = "女神火箭";
-    prod_id_arr[3032] = "女神火箭(橫)";
-    prod_id_arr[3035] = "仿真蟑螂(橫)";
-
-    prod_id_arr[3049] = "小饅頭";
-    prod_id_arr[3050] = "小饅頭-雙魚冠軍";
-    prod_id_arr[3055] = "詭王";
-
-    prod_id_arr[3124] = "刀鋒嘎嘎嘎";
-
-    prod_id_arr[3160] = "櫻花瓣";
-    prod_id_arr[3161] = "櫻花樹";
-    prod_id_arr[3162] = "櫻花印記";
-    prod_id_arr[3163] = "櫻之扇";
-    prod_id_arr[3164] = "醉櫻劍";
-    prod_id_arr[3165] = "醉櫻劍(橫)";
-    prod_id_arr[3166] = "櫻之武盔";
-    prod_id_arr[3167] = "櫻之武盔(橫)";
-    prod_id_arr[3169] = "平底鍋";
-
-    prod_id_arr[3211] = "手裏劍";
-    prod_id_arr[3212] = "撒菱";
-    prod_id_arr[3213] = "影之撒菱";
-    prod_id_arr[3214] = "苦無";
-    prod_id_arr[3215] = "影之苦無";
-    prod_id_arr[3216] = "吹矢";
-    prod_id_arr[3217] = "吹矢(橫)";
-    prod_id_arr[3218] = "忍刀";
-    prod_id_arr[3219] = "忍刀(橫)";
-
-    prod_id_arr[3231] = "金牛角";
-    prod_id_arr[3232] = "金牛座";
-    prod_id_arr[3233] = "金牛座(橫)";
-
-    prod_id_arr[3267] = "狼人殺";
-    prod_id_arr[3268] = "狼人殺";
-    prod_id_arr[3275] = "萬毒歸宗";
-    prod_id_arr[3276] = "人氣卡（Nano）";
-    prod_id_arr[3277] = "萬毒歸宗";
-    prod_id_arr[3278] = "泡槍哭哭";
-    prod_id_arr[3279] = "泡槍哭哭";
-    prod_id_arr[3294] = "一番好意";
-
-    prod_id_arr[3300] = "星探禮";
-    prod_id_arr[3301] = "星探禮";
-    prod_id_arr[3303] = "幸運四葉草";
-    prod_id_arr[3306] = "雙子";
-    prod_id_arr[3307] = "雙子座";
-    prod_id_arr[3308] = "雙子座(橫)";
-    prod_id_arr[3342] = "抽獎券";
-    prod_id_arr[3362] = "啵緹-牡羊冠軍";
-    prod_id_arr[3363] = "國動-專屬禮物";
-    prod_id_arr[3377] = "飆悍-專屬禮物";
-    prod_id_arr[3378] = "飆悍-專屬禮物";
-
-    prod_id_arr[3410] = "應援棒";
-    prod_id_arr[3411] = "應援棒";
-    prod_id_arr[3423] = "Fun";
-
-    prod_id_arr[3441] = "登入先";
-    prod_id_arr[3442] = "登入先(免費禮物)";
-    prod_id_arr[3444] = "7777(免費禮物)";
-    prod_id_arr[3446] = "都你講(免費禮物)";
-
-    prod_id_arr[3592] = "777";
-    prod_id_arr[3609] = "強力留言";
-    prod_id_arr[3663] = "發大財";
-    prod_id_arr[3664] = "棒棒糖";
-    prod_id_arr[3665] = "黑人問號";
-    prod_id_arr[3666] = "好棒棒";
-    prod_id_arr[3667] = "鼓鼓掌";
-    prod_id_arr[3668] = "嗨起乃";
-    prod_id_arr[3669] = "錢給你";
-    prod_id_arr[3670] = "手指愛心";
-    prod_id_arr[3671] = "親一口";
-    prod_id_arr[3672] = "中指摳";
-    prod_id_arr[3673] = "鈔票噴子";
-    prod_id_arr[3674] = "超級7";
-    prod_id_arr[3675] = "灰機";
-    prod_id_arr[3676] = "看夜景";
-    prod_id_arr[3677] = "MVP";
-    prod_id_arr[3678] = "熱氣球";
-    prod_id_arr[3750] = "壁咚";
-    prod_id_arr[3751] = "完美演出";
-    prod_id_arr[3752] = "幸運蛋";
-    prod_id_arr[3757] = "姊姊-巨蟹座";
-
-    prod_id_arr[3942] = "抽獎券";
-
-    prod_id_arr[4003] = "陪我玩";
-    prod_id_arr[4004] = "開趴踢";
-
-    prod_id_arr[4053] = "田亞霍專屬鼓勵";
-
-    prod_id_arr[4194] = "幸福教教主刮哥";
-
-    prod_id_arr[4734] = "火柴";
-    prod_id_arr[4735] = "火柴盒";
-    prod_id_arr[4736] = "熱茶";
-    prod_id_arr[4737] = "熱茶壺";
-    prod_id_arr[4738] = "扇子";
-    prod_id_arr[4949] = "手工餅乾";
-    prod_id_arr[4950] = "果汁棉花糖";
-    prod_id_arr[4951] = "競技の愛";
-
-    prod_id_arr[5047] = "告白氣球";
-    prod_id_arr[5048] = "喔我戀愛了";
-    prod_id_arr[5049] = "陪你看流星雨";
-    prod_id_arr[5050] = "大聲說愛你";
-    prod_id_arr[5051] = "別說了,吻你";
-    prod_id_arr[5053] = "鑽石恆久遠";
-
-    prod_id_arr[5175] = "傑出的一手";
-    prod_id_arr[5176] = "尾刀狗";
-    prod_id_arr[5177] = "我覺得不行";
-    prod_id_arr[5178] = "歐皇";
-    prod_id_arr[5179] = "非酋";
-    prod_id_arr[5180] = "豬隊友";
-    prod_id_arr[5181] = "頭香";
-    prod_id_arr[5182] = "嚇到吃手手";
-    prod_id_arr[5183] = "黑人問號";
-    prod_id_arr[5184] = "很雷";
-    prod_id_arr[5185] = "C8763";
-    prod_id_arr[5186] = "Carry";
-    prod_id_arr[5187] = "我阿嬤都比你強";
-    prod_id_arr[5188] = "梳不齊";
-    prod_id_arr[5189] = "尷尬又不失禮貌的微笑";
-    prod_id_arr[5190] = "是在哈囉";
-
-    // 2020.04.30 統神 day 1
-    prod_id_arr[5296] = "太神啦";
-    prod_id_arr[5297] = "聊天室 7 起來";
-
-    prod_id_arr[5303] = "再來啊";
-    prod_id_arr[5304] = "你就是個小丑R";
-    prod_id_arr[5305] = "剩下一張帥臉";
-
-    prod_id_arr[5533] = "沖天炮";
-    prod_id_arr[5534] = "撈金魚";
-    prod_id_arr[5535] = "波浪舞";
-    prod_id_arr[5536] = "花火大會";
-
-    prod_id_arr[5556] = "大紅包";
-
-    prod_id_arr[5581] = "你又懂甚麼";
-    prod_id_arr[5582] = "I don't care";
-    prod_id_arr[5583] = "兄弟齊心三百公斤";
-    prod_id_arr[5584] = "做自己94帥";
-
-    prod_id_arr[5666] = "粉絲團7天體驗券";
-    prod_id_arr[5919] = "看好你喔!";
-    prod_id_arr[5946] = "LOVE";
-    prod_id_arr[5947] = "讚一個啦";
-
-    prod_id_arr[6002] = "玫瑰";
-
-    prod_id_arr[6165] = "Carry";
-    prod_id_arr[6201] = "濃情巧克力(特效)";
-
-    prod_id_arr[6542] = "貼春聯";
-    prod_id_arr[6543] = "大紅燈籠";
-    prod_id_arr[6544] = "年獸來了";
-    prod_id_arr[6545] = "爆竹火箭";
 })();
 
 
@@ -475,6 +107,9 @@ var reconnection_gift_count = 0; //計算斷線重連次數 gift server
 var obs_mode;
 var chat_limit;
 var csrf_token;
+
+// 房间人物信息列表
+var userInfoMap
 
 if (typeof document.body.dataset.obs_mode === "undefined") {
     obs_mode = false;
@@ -568,6 +203,21 @@ const BanaApi = {
             return response.json();
         });
     },
+    get: function (url = 'test') {
+        return fetch(
+            "/api" + url,
+            {
+                method: 'GET', // GET, POST
+                headers: {
+                    "Accept": "application/vnd.twitchtv.v5+json",
+                    "Client-ID": "ixqqe9qqmuwq0rw7n6jn3oibqby7pj" // "wbmytr93xzw8zbg0p1izqyzzc5mbiz"
+                },
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            }
+        ).then((response) => {
+            return response.json();
+        });
+    },
     getRoomInfo: function (_room_id) {
         return this.post('getRoomInfo', { room_id: _room_id });
     },
@@ -576,23 +226,17 @@ const BanaApi = {
     },
     getRoomGiftList: function (_room_id) {
         return this.post('getRoomGiftList', { room_id: _room_id });
+    },
+    getTwitchStreamInfo: function () {
+        // todo
+        // geturl username
+        // get channel
+        // get stream
+    },
+    getTwitchUserByUsername: function (username) {
+        return this.get('/users?login=' + username);
     }
 };
-
-//getRoomInfo test
-// BanaApi.getRoomInfo('2132991').then((data) => {
-//   console.log(data);
-// }).catch((error) => { 
-//   console.log(error);
-// });
-
-//getRoomStickerList test
-// BanaApi.getRoomStickerList('2132991').then((data) => {
-//   console.log(data);
-// }).catch((error) => { 
-//   console.log(error);
-// });
-
 
 //統計
 /*
@@ -684,81 +328,66 @@ const stats = {
 
 const main = {
     init: function () {
-        // 當 hashtag 改變時重新載入頁面
+        // 当 hashtag 改变时重新载入页面
         window.addEventListener("hashchange", function () {
             location.reload();
         }, false);
 
-        //判斷載入分頁
+        // 判断载入分页
         if (window.location.hash == '' || window.location.hash == '#') {
-            //載入首頁
+            // 载入首页
             this.goto_home_page();
         } else {
-            //載入聊天室頁面
+            // 载入聊天室页面
             this.goto_chat_page();
         }
     },
     check_hashtag_value: function () {
         if (window.location.hash == '' || window.location.hash == '#') {
-            //
+            // empty
         } else {
             let raw_hashtag_value = window.location.hash.substr(1);
 
-            if(raw_hashtag_value.startsWith("twitch:") === true){
-                //twitch
+            if (raw_hashtag_value.startsWith("twitch:") === true) {
+                // twitch
                 let raw_twitch_channel_name = raw_hashtag_value.replace(/^twitch:/ig, '');
 
-                /*
-                if(raw_twitch_channel_name.length >= 4){
-                    let twitch_channel_name = raw_twitch_channel_name.match(/^[a-zA-Z0-9_]{4,25}$/);
-                    if(raw_twitch_channel_name !== twitch_channel_name){
-                        //goto twitch chat
-                    }else{
-                        //含有非法字元
-                    }
-                }
-                */
-
-                if(raw_twitch_channel_name.match(/^[a-zA-Z0-9_]{4,25}$/) !== null){
-                    //goto twitch chat
-                    //let twitch_channel_name = raw_twitch_channel_name;
+                if (raw_twitch_channel_name.match(/^[a-zA-Z0-9_]{4,25}$/) !== null) {
+                    // goto twitch chat
+                    // let twitch_channel_name = raw_twitch_channel_name;
                     this.load_twitch_chat(raw_twitch_channel_name);
-                }else{
-                    //含有非法字元
+                } else {
+                    // 含有非法字元
                 }
-                
-            }else{
-                //lang play
-                let langplay_channel_name = raw_hashtag_value.replace(/[^0-9]/g,'');
-                this.load_langplay_chat(langplay_channel_name);
+
             }
         }
     },
-    goto_home_page: function () { //載入首頁
+    goto_home_page: function () { // 载入首页
         let c_script = document.getElementById("c_script");
         elemVisibility.show(c_script);
-        this.change_channel_btn(); //改完後觸發hashchange重載頁面
+        this.change_channel_btn(); // 改完后触发 hashchange 重载页面
     },
-    goto_chat_page: function () { //載入聊天室頁面
-        this.check_scroll(); //檢查畫面捲動方向,如果向上則觸法暫停捲動功能
+    goto_chat_page: function () { // 载入聊天室页面
+        this.check_scroll(); // 检查页面滚动方向，如果向上则触发暂停滚动功能
 
-        output = document.getElementById("output"); //聊天室輸出
+        output = document.getElementById("output"); // 聊天室输出
         output.innerHTML = '';
 
-        heat = document.getElementById("heat"); //熱度
+        heat = document.getElementById("heat"); // 热度
         heat.innerHTML = '● 載入中..';
 
-        user_cnt = document.getElementById("user_cnt"); //觀眾數
+        user_cnt = document.getElementById("user_cnt"); // 观众数
         user_cnt.innerHTML = '';
 
         if (obs_mode == false) {
-            //關閉checkbox
-            document.querySelector("#ttsCheck").checked = false; //語音
-            document.querySelector("#statsUiCheck").checked = false; //統計
+            // 关闭 checkbox
+            document.querySelector("#ttsCheck").checked = false; // 语音
+            document.querySelector("#statsUiCheck").checked = false; // 统计
 
-            this.scroll_to_bottom_btn(); //建立向下捲動按鈕
+            this.scroll_to_bottom_btn(); // 建立向下滚动按钮
 
-            //開啟設定選單
+            // 开启设定选项
             setting_div = document.getElementById("setting_div");
             scroll_to_bottom_btn = document.getElementById("scroll_to_bottom_btn");
 
@@ -775,13 +404,13 @@ const main = {
         user_cnt.textContent = `● ${twitch_channel_name.toUpperCase()}`;
 
         elemVisibility.hide(document.getElementById("announcements"));
-        
+
         if (obs_mode == true) {
             elemVisibility.hide(document.getElementById("tool_bar"));
-        }else {
+        } else {
             elemVisibility.hide(document.getElementById("joinCheck_lab"));
             elemVisibility.hide(document.getElementById("giftCheck_lab"));
-            
+
             elemVisibility.show(document.getElementById("tool_bar"));
         }
 
@@ -797,26 +426,48 @@ const main = {
             identity: {
                 username: 'justinfan12345',
                 password: 'oauth:kappa'
+                // username: 'alomerry',
+                // password: 'oauth:vt5e1ifhtuy8po0twhhf4apbfsk7cu'
             },
-            channels: [ twitch_channel_name ]
+            channels: [twitch_channel_name]
         });
         client.connect().catch(console.error);
-        client.on('message', (channel, tags, message, self) => {
-            if(self) return;
-            // if(message.toLowerCase() === '!hello') {
-            //     client.say(channel, `@${tags.username}, heya!`);
-            // }
-            //console.log(tags);
 
-            if(tags.color == null) tags.color = '#1dddf8';
+        client.on('message', (channel, tags, message, self) => {
+            console.log(tags,channel);
+            if (self) return;
+            if(message.toLowerCase() === '!hello') {
+                // client.say(channel, `@${tags.username}, heya!`);
+            }
+
+            if (tags.color == null) tags.color = '#1dddf8';
 
             let message_with_emotes = this.twitch_format_emotes(message, tags.emotes);
 
-            if(tags['display-name'].toLowerCase() === tags.username.toLowerCase()){
-                this.writeToScreen(`<span style="color:${tags.color}">${tags['display-name']}</span>: ${message_with_emotes}`);
-            }else{
-                //this.writeToScreen(`<span style="color:${tags.color}">${tags['display-name']}</span>(${tags.username}): ${message}`);
-                this.writeToScreen(`<span style="color:${tags.color}">${tags['display-name']}</span>: ${message_with_emotes}`);
+            if (userInfoMap == null) {
+                userInfoMap = new Map()
+            }
+            var userInfo = userInfoMap.get(tags['username'])
+
+            if (userInfo == null) {
+                BanaApi.getTwitchUserByUsername(tags['username']).then((body) => {
+                    userInfoMap.set(tags['username'], body.users[0])
+                    if (tags['display-name'].toLowerCase() === tags.username.toLowerCase()) {
+                        this.writeToScreen(`<img class="circleImg" src="${body.users[0].logo}"><span style="color:${tags.color}">${tags['display-name']}</span>: ${message_with_emotes}`);
+                    } else {
+                        //this.writeToScreen(`<span style="color:${tags.color}">${tags['display-name']}</span>(${tags.username}): ${message}`);
+                        this.writeToScreen(`<img class="circleImg" src="${body.users[0].logo}"><span style="color:${tags.color}">${tags['display-name']}</span>: ${message_with_emotes}`);
+                    }
+                }).catch((error) => {
+                    console.log(error);
+                });
+            } else {
+                if (tags['display-name'].toLowerCase() === tags.username.toLowerCase()) {
+                    this.writeToScreen(`<img class="circleImg" src="${userInfo.logo}"><span style="color:${tags.color}">${tags['display-name']}</span>: ${message_with_emotes}`);
+                } else {
+                    //this.writeToScreen(`<span style="color:${tags.color}">${tags['display-name']}</span>(${tags.username}): ${message}`);
+                    this.writeToScreen(`<img class="circleImg" src="${userInfo.logo}"><span style="color:${tags.color}">${tags['display-name']}</span>: ${message_with_emotes}`);
+                }
             }
 
             //tts
@@ -825,20 +476,20 @@ const main = {
                     tts.speak2(message);
                 }
             }
-            
+
         });
     },
     twitch_format_emotes: function (text, emotes) {
         let splitText = text.split('');
-        for(let i in emotes) {
+        for (let i in emotes) {
             let e = emotes[i];
-            for(let j in e) {
+            for (let j in e) {
                 let mote = e[j];
-                if(typeof mote == 'string') {
+                if (typeof mote == 'string') {
                     mote = mote.split('-');
                     mote = [parseInt(mote[0]), parseInt(mote[1])];
-                    let length =  mote[1] - mote[0],
-                        empty = Array.apply(null, new Array(length + 1)).map(function() { return '' });
+                    let length = mote[1] - mote[0],
+                        empty = Array.apply(null, new Array(length + 1)).map(function () { return '' });
                     splitText = splitText.slice(0, mote[0]).concat(empty).concat(splitText.slice(mote[1] + 1, splitText.length));
                     splitText.splice(mote[0], 1, '<img class="emoticon" src="https://static-cdn.jtvnw.net/emoticons/v1/' + i + '/1.0">');
                 }
@@ -848,21 +499,21 @@ const main = {
     },
     htmlEntities: function (html) {
         function it() {
-            return html.map(function(n, i, arr) {
-                    if(n.length == 1) {
-                        return n.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-                               return '&#'+i.charCodeAt(0)+';';
-                            });
-                    }
-                    return n;
-                });
+            return html.map(function (n, i, arr) {
+                if (n.length == 1) {
+                    return n.replace(/[\u00A0-\u9999<>\&]/gim, function (i) {
+                        return '&#' + i.charCodeAt(0) + ';';
+                    });
+                }
+                return n;
+            });
         }
         let isArray = Array.isArray(html);
-        if(!isArray) {
+        if (!isArray) {
             html = html.split('');
         }
         html = it(html);
-        if(!isArray) html = html.join('');
+        if (!isArray) html = html.join('');
         return html;
     },
     load_langplay_chat: function (langplay_channel_name) {
@@ -870,7 +521,7 @@ const main = {
         let ovs = false;
         this.get_langplay_token(ovs); //取得token
     },
-    change_channel_btn: function () { //首頁切換頻道按鈕
+    change_channel_btn: function () { // 首页切换频道按钮
         let btn_submit = document.getElementById("btn_submit");
         let input_submit = document.getElementById("inputChannel");
 
@@ -2031,6 +1682,6 @@ function webSocket_gift() {
 
 
 (function () {
-    //程式進入點
+    // 程序进入点
     window.addEventListener("load", main.init(), false);
 })();

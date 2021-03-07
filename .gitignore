@@ -1,2 +1,6 @@
 node_modules
 css/font.css
+.htaccess
+.user.ini
+.well-known
+404.html
