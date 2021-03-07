@@ -22,8 +22,8 @@
 
 body {
   color: #fff;
-  /* font-family: var(--font-bold); */
-  font-family: "Wawa";
+  font-family: var(--font-bold);
+  /* font-family: "Wawa"; */
   margin: 0;
   padding: 0;
   /*
@@ -58,9 +58,9 @@ a:active {
 
 #output {
   font-size: 1.4rem;
-  /*text-shadow: 0 0 1px #000, 1px 0 1px #000, 0 1px 1px #000, 1px 1px 1px #000;*/
+  text-shadow: 0 0 1px #000, 1px 0 1px #000, 0 1px 1px #000, 1px 1px 1px #000;
   text-shadow: var(--text-shadow-black);
-  font-weight: 300;
+  font-weight: 800;
 }
 
 #css_for_browser #output {
@@ -363,4 +363,13 @@ JS: elemVisibility
 a, a:link {
   color: #5E8C88;
   text-decoration: unset;
+}
+
+/* 弹幕头像 */
+img.circleImg{
+  border-radius: 30px;
+  width:30px;
+  height:30px;
+  margin-right: 5px;
+    margin-top: -3px;
 }
