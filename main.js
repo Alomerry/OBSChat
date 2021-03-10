@@ -836,6 +836,8 @@ const main = {
         let pre = document.createElement("div");
         //pre.style.wordWrap = "break-word";
         pre.classList.add("output_lines");
+        pre.classList.add("animated");
+        pre.classList.add("fadeInUp");
         if (typeof class_name_arr !== "undefined") {
             pre.classList.add(...class_name_arr);
         } else {
@@ -848,6 +850,8 @@ const main = {
         pre.innerHTML = `<span class="kk_time kk_pod">${this.get_time()}</span>${message}`;
 
         output.appendChild(pre); //輸出訊息在畫面上
+        window.getComputedStyle(pre).opacity;
+        pre.className += ' in';
 
         this.scroll_to_bottom_auto();
 
